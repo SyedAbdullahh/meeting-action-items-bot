@@ -12,42 +12,7 @@ router.post("/status_change", async (req, res) => {
   const { data } = req.body;
 
   res.status(200).send("OK");
-  console.log("-----------------------------------------------------------------------")
-  console.log('data', data);
-  console.log("-----------------------------------------------------------------------")
-
-  // extract action items when meeting is over
-  // if (data.data && data.data.code === "done") {
-  //   try {
-  //     //meeting ended event
-  //     prompt("Meeting ended.....");
-
-  //     const transcriptResponse = await axios.get(
-  //       `https://${config.recallRegion}.recall.ai/api/v1/transcript/${data.bot.id}`,
-  //       {
-  //         headers: {
-  //           Authorization: `Token ${config.recallApiKey}`,
-  //           Accept: "application/json",
-  //           "Content-Type": "application/json",
-  //         },
-  //       }
-  //     );
-  //     const transcript = transcriptResponse.data;
-
-  //     // error handling for empty transcript
-  //     if (transcript.length === 0) {
-  //       sendEvent({ error: "No transcript found" });
-  //       return;
-  //     }
-  //     const actionItems = await extractActionItems(JSON.stringify(transcript));
-  //     sendEvent(actionItems);
-  //   } catch (error) {
-  //     console.error(error);
-  //     sendEvent({ error: "Error extracting action items" });
-  //   }
-  // }
-
-  // ...existing code...
+ 
   // extract action items when meeting is over
   if (data.data && data.data.code === "done") {
     try {
